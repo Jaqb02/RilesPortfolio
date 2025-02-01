@@ -1,0 +1,229 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header img {
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 4px solid #ff6600;
+}
+
+h1, h2, h3 {
+    color: #ff6600;
+    font-family: 'Helvetica', sans-serif;
+    text-shadow: 10px 10px 10px black
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#about {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-image {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ff6600;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.13rem;
+    text-shadow: 10px 10px 10px black
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+#gallery {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.albums {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.album {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.album img {
+    width: 430px;
+    height: 430px;
+    border-radius: 10px;
+    border: 2px solid #ff6600;
+}
+
+.album-details {
+    flex: 1;
+}
+
+.album-details h3 {
+    margin-top: 0;
+    font-size: 2rem;
+    text-shadow: 10px 10px 10px black
+}
+
+.songs {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-shadow: 10px 10px 10px black
+}
+
+.songs li {
+    margin-bottom: 10px;
+}
+
+.songs a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.songs a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#contact {
+    padding: 20px;
+    background-color: #1e1e1e;
+    margin-top: 20px;
+    text-shadow: 10px 10px 10px black
+}
+
+#contact a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #1e1e1e;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.holographic-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.holographic-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1)
+    );
+    opacity: 0;
+    transform: rotate(45deg);
+    transition: opacity 0.5s ease, top 0.5s ease, left 0.5s ease;
+    z-index: 1;
+}
+
+.holographic-card:hover::before {
+    opacity: 1;
+    top: 0;
+    left: 0;
+}
+
+.holographic-card img {
+    position: relative;
+    z-index: 2; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.holographic-card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .album {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .album img {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .songs {
+        grid-template-columns: 1fr;
+    }
+}
